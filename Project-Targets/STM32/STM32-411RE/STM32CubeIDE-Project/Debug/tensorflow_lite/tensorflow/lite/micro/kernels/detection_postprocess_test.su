@@ -1,0 +1,42 @@
+gthr-default.h:229:1:int __gthread_key_delete(__gthread_key_t)	16	static
+limits:595:7:static constexpr unsigned char std::numeric_limits<unsigned char>::min()	4	static
+limits:598:7:static constexpr unsigned char std::numeric_limits<unsigned char>::max()	4	static
+stl_vector.h:285:7:std::_Vector_base<_Tp, _Alloc>::_Vector_base() [with _Tp = std::unique_ptr<TfLiteDelegate, void (*)(TfLiteDelegate*)>; _Alloc = std::allocator<std::unique_ptr<TfLiteDelegate, void (*)(TfLiteDelegate*)> >]	16	static
+stl_vector.h:484:7:std::vector<_Tp, _Alloc>::vector() [with _Tp = std::unique_ptr<TfLiteDelegate, void (*)(TfLiteDelegate*)>; _Alloc = std::allocator<std::unique_ptr<TfLiteDelegate, void (*)(TfLiteDelegate*)> >]	16	static
+op_resolver.h:44:35:virtual tflite::OpResolver::TfLiteDelegatePtrVector tflite::OpResolver::GetDelegates(int) const	24	static
+op_resolver.h:48:11:tflite::OpResolver::~OpResolver()	16	static
+op_resolver.h:48:11:virtual tflite::OpResolver::~OpResolver()	16	static
+op_resolver.h:62:16:virtual bool tflite::OpResolver::MayContainUserDefinedOps() const	16	static
+micro_op_resolver.h:53:29:virtual const TfLiteRegistration* tflite::MicroOpResolver::FindOp(tflite::BuiltinOperator, int) const	24	static
+micro_op_resolver.h:60:29:virtual const TfLiteRegistration* tflite::MicroOpResolver::FindOp(const char*, int) const	24	static
+micro_op_resolver.h:68:3:tflite::MicroOpResolver::~MicroOpResolver()	16	static
+micro_op_resolver.h:68:3:virtual tflite::MicroOpResolver::~MicroOpResolver()	16	static
+portable_type_to_tflitetype.h:65:1:constexpr TfLiteType tflite::typeToTfLiteType() [with T = float]	4	static
+portable_type_to_tflitetype.h:66:1:constexpr TfLiteType tflite::typeToTfLiteType() [with T = unsigned char]	4	static
+micro_test.h:78:13:void tflite::InitializeTest()	8	static
+kernel_runner.h:33:7:tflite::micro::KernelRunner::~KernelRunner()	16	static
+detection_postprocess_test.cc:77:6:void tflite::testing::{anonymous}::TestDetectionPostprocess(int*, const float*, int*, const float*, int*, const float*, int*, float*, int*, float*, int*, float*, int*, float*, const float*, const float*, const float*, const float*, float, bool, uint8_t*, uint8_t*, uint8_t*, float, float, float, float, float, float)	5832	static
+detection_postprocess_test.cc:191:1:int main(int, char**)	1016	static
+stl_algobase.h:198:5:constexpr const _Tp& std::min(const _Tp&, const _Tp&) [with _Tp = long int]	16	static
+stl_vector.h:128:2:std::_Vector_base<_Tp, _Alloc>::_Vector_impl::_Vector_impl() [with _Tp = std::unique_ptr<TfLiteDelegate, void (*)(TfLiteDelegate*)>; _Alloc = std::allocator<std::unique_ptr<TfLiteDelegate, void (*)(TfLiteDelegate*)> >]	16	static
+test_helpers.h:249:14:float tflite::testing::ScaleFromMinMax(float, float) [with T = unsigned char]	32	static
+test_helpers.h:257:12:int tflite::testing::ZeroPointFromMinMax(float, float) [with T = unsigned char]	32	static
+test_helpers.h:199:14:TfLiteTensor tflite::testing::CreateQuantizedTensor(const float*, T*, TfLiteIntArray*, float, int, bool) [with T = unsigned char]	48	static
+test_helpers.h:169:14:TfLiteTensor tflite::testing::CreateTensor(const T*, TfLiteIntArray*, bool) [with T = float]	24	static
+micro_mutable_op_resolver.h:58:29:const TfLiteRegistration* tflite::MicroMutableOpResolver<tOpCount>::FindOp(const char*) const [with unsigned int tOpCount = 128]	24	static
+allocator.h:138:7:std::allocator< <template-parameter-1-1> >::allocator() [with _Tp = std::unique_ptr<TfLiteDelegate, void (*)(TfLiteDelegate*)>]	16	static
+stl_vector.h:94:2:std::_Vector_base<_Tp, _Alloc>::_Vector_impl_data::_Vector_impl_data() [with _Tp = std::unique_ptr<TfLiteDelegate, void (*)(TfLiteDelegate*)>; _Alloc = std::allocator<std::unique_ptr<TfLiteDelegate, void (*)(TfLiteDelegate*)> >]	16	static
+micro_utils.h:69:6:void tflite::Quantize(const float*, T*, int, float, int) [with T = unsigned char]	48	static
+test_helpers.h:189:14:TfLiteTensor tflite::testing::CreateQuantizedTensor(const T*, TfLiteIntArray*, float, int, bool) [with T = unsigned char]	32	static
+new_allocator.h:80:7:__gnu_cxx::new_allocator<_Tp>::new_allocator() [with _Tp = std::unique_ptr<TfLiteDelegate, void (*)(TfLiteDelegate*)>]	16	static
+micro_utils.h:36:3:T tflite::FloatToQuantizedType(float, float, int) [with T = unsigned char]	48	static
+test_helpers.h:169:14:TfLiteTensor tflite::testing::CreateTensor(const T*, TfLiteIntArray*, bool) [with T = unsigned char]	24	static
+stl_algobase.h:222:5:constexpr const _Tp& std::max(const _Tp&, const _Tp&) [with _Tp = long int]	16	static
+micro_mutable_op_resolver.h:39:7:tflite::MicroMutableOpResolver<128>::~MicroMutableOpResolver()	16	static
+micro_mutable_op_resolver.h:39:7:virtual tflite::MicroMutableOpResolver<128>::~MicroMutableOpResolver()	16	static
+all_ops_resolver.h:28:7:tflite::AllOpsResolver::~AllOpsResolver()	16	static
+all_ops_resolver.h:28:7:virtual tflite::AllOpsResolver::~AllOpsResolver()	16	static
+mock_micro_graph.h:29:7:tflite::MockMicroGraph::~MockMicroGraph()	16	static
+mock_micro_graph.h:29:7:virtual tflite::MockMicroGraph::~MockMicroGraph()	16	static
+micro_mutable_op_resolver.h:46:29:const TfLiteRegistration* tflite::MicroMutableOpResolver<tOpCount>::FindOp(tflite::BuiltinOperator) const [with unsigned int tOpCount = 128]	24	static
+micro_mutable_op_resolver.h:69:41:TfLiteStatus (* tflite::MicroMutableOpResolver<tOpCount>::GetOpDataParser(tflite::BuiltinOperator) const)(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**) [with unsigned int tOpCount = 128]	24	static

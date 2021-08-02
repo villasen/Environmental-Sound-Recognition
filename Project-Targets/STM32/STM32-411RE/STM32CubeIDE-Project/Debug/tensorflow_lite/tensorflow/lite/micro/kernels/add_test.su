@@ -1,0 +1,32 @@
+gthr-default.h:229:1:int __gthread_key_delete(__gthread_key_t)	16	static
+limits:525:7:static constexpr signed char std::numeric_limits<signed char>::min()	4	static
+limits:528:7:static constexpr signed char std::numeric_limits<signed char>::max()	4	static
+limits:925:7:static constexpr short int std::numeric_limits<short int>::min()	4	static
+limits:928:7:static constexpr short int std::numeric_limits<short int>::max()	4	static
+portable_type_to_tflitetype.h:63:1:constexpr TfLiteType tflite::typeToTfLiteType() [with T = short int]	4	static
+portable_type_to_tflitetype.h:65:1:constexpr TfLiteType tflite::typeToTfLiteType() [with T = float]	4	static
+portable_type_to_tflitetype.h:67:1:constexpr TfLiteType tflite::typeToTfLiteType() [with T = signed char]	4	static
+micro_test.h:78:13:void tflite::InitializeTest()	8	static
+add_test.cc:88:6:void tflite::testing::{anonymous}::TestAddFloat(int*, const float*, int*, const float*, int*, const float*, TfLiteFusedActivation, float*)	248	static
+add_test.cc:147:1:int main(int, char**)	1760	static
+stl_algobase.h:198:5:constexpr const _Tp& std::min(const _Tp&, const _Tp&) [with _Tp = long int]	16	static
+test_helpers.h:169:14:TfLiteTensor tflite::testing::CreateTensor(const T*, TfLiteIntArray*, bool) [with T = float]	24	static
+mock_micro_graph.h:29:7:tflite::MockMicroGraph::~MockMicroGraph()	16	static
+mock_micro_graph.h:29:7:virtual tflite::MockMicroGraph::~MockMicroGraph()	16	static
+kernel_runner.h:33:7:tflite::micro::KernelRunner::~KernelRunner()	16	static
+add_test.cc:64:6:void tflite::testing::{anonymous}::ValidateAddGoldens(TfLiteTensor*, int, const T*, T*, int, TfLiteFusedActivation, float) [with T = float]	424	static
+add_test.cc:110:6:void tflite::testing::{anonymous}::TestAddQuantized(int*, const float*, T*, float, int, int*, const float*, T*, float, int, int*, const float*, T*, float, int, TfLiteFusedActivation, T*) [with T = signed char]	264	static
+add_test.cc:110:6:void tflite::testing::{anonymous}::TestAddQuantized(int*, const float*, T*, float, int, int*, const float*, T*, float, int, int*, const float*, T*, float, int, TfLiteFusedActivation, T*) [with T = short int]	264	static
+test_helpers.h:199:14:TfLiteTensor tflite::testing::CreateQuantizedTensor(const float*, T*, TfLiteIntArray*, float, int, bool) [with T = signed char]	48	static
+test_helpers.h:189:14:TfLiteTensor tflite::testing::CreateQuantizedTensor(const T*, TfLiteIntArray*, float, int, bool) [with T = signed char]	32	static
+micro_utils.h:69:6:void tflite::Quantize(const float*, T*, int, float, int) [with T = signed char]	48	static
+add_test.cc:64:6:void tflite::testing::{anonymous}::ValidateAddGoldens(TfLiteTensor*, int, const T*, T*, int, TfLiteFusedActivation, float) [with T = signed char]	424	static
+test_helpers.h:199:14:TfLiteTensor tflite::testing::CreateQuantizedTensor(const float*, T*, TfLiteIntArray*, float, int, bool) [with T = short int]	48	static
+test_helpers.h:189:14:TfLiteTensor tflite::testing::CreateQuantizedTensor(const T*, TfLiteIntArray*, float, int, bool) [with T = short int]	32	static
+micro_utils.h:69:6:void tflite::Quantize(const float*, T*, int, float, int) [with T = short int]	48	static
+add_test.cc:64:6:void tflite::testing::{anonymous}::ValidateAddGoldens(TfLiteTensor*, int, const T*, T*, int, TfLiteFusedActivation, float) [with T = short int]	424	static
+test_helpers.h:169:14:TfLiteTensor tflite::testing::CreateTensor(const T*, TfLiteIntArray*, bool) [with T = signed char]	24	static
+micro_utils.h:36:3:T tflite::FloatToQuantizedType(float, float, int) [with T = signed char]	48	static
+test_helpers.h:169:14:TfLiteTensor tflite::testing::CreateTensor(const T*, TfLiteIntArray*, bool) [with T = short int]	24	static
+micro_utils.h:36:3:T tflite::FloatToQuantizedType(float, float, int) [with T = short int]	48	static
+stl_algobase.h:222:5:constexpr const _Tp& std::max(const _Tp&, const _Tp&) [with _Tp = long int]	16	static

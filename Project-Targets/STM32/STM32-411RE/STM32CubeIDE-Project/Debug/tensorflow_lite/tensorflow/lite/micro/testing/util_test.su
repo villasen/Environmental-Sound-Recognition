@@ -1,0 +1,2 @@
+micro_test.h:78:13:void tflite::InitializeTest()	8	static
+util_test.cc:18:1:int main(int, char**)	96	static

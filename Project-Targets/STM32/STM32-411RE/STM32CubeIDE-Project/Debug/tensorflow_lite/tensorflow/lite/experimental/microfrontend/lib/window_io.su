@@ -1,0 +1,2 @@
+window_io.c:17:6:WindowWriteMemmapPreamble	24	static
+window_io.c:32:6:WindowWriteMemmap	24	static

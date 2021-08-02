@@ -1,0 +1,35 @@
+gthr-default.h:229:1:int __gthread_key_delete(__gthread_key_t)	16	static
+limits:525:7:static constexpr signed char std::numeric_limits<signed char>::min()	4	static
+limits:528:7:static constexpr signed char std::numeric_limits<signed char>::max()	4	static
+portable_type_to_tflitetype.h:65:1:constexpr TfLiteType tflite::typeToTfLiteType() [with T = float]	4	static
+portable_type_to_tflitetype.h:67:1:constexpr TfLiteType tflite::typeToTfLiteType() [with T = signed char]	4	static
+micro_test.h:78:13:void tflite::InitializeTest()	8	static
+hard_swish_test.cc:29:6:void tflite::testing::{anonymous}::GenerateUniformRandomVector(int, float, float, std::minstd_rand*, float*)	40	static
+hard_swish_test.cc:50:6:void tflite::testing::{anonymous}::EvalTestReferenceHardSwish(int, float*, float*)	48	static
+kernel_runner.h:33:7:tflite::micro::KernelRunner::~KernelRunner()	16	static
+hard_swish_test.cc:204:6:void tflite::testing::{anonymous}::TestHardSwishFloat(int, float*, std::minstd_rand*, float*, float*)	592	static
+hard_swish_test.cc:254:1:int main(int, char**)	1544	static
+stl_algobase.h:198:5:constexpr const _Tp& std::min(const _Tp&, const _Tp&) [with _Tp = long int]	16	static
+random.h:347:7:std::linear_congruential_engine<_UIntType, __a, __c, __m>::result_type std::linear_congruential_engine<_UIntType, __a, __c, __m>::operator()() [with _UIntType = unsigned int; _UIntType __a = 48271; _UIntType __c = 0; _UIntType __m = 2147483647]	16	static
+stl_algobase.h:222:5:constexpr const _Tp& std::max(const _Tp&, const _Tp&) [with _Tp = float]	16	static
+stl_algobase.h:198:5:constexpr const _Tp& std::min(const _Tp&, const _Tp&) [with _Tp = float]	16	static
+test_helpers.h:169:14:TfLiteTensor tflite::testing::CreateTensor(const T*, TfLiteIntArray*, bool) [with T = float]	24	static
+random.h:271:7:std::linear_congruential_engine<_UIntType, __a, __c, __m>::linear_congruential_engine() [with _UIntType = unsigned int; _UIntType __a = 48271; _UIntType __c = 0; _UIntType __m = 2147483647]	16	static
+hard_swish_test.cc:58:6:void tflite::testing::{anonymous}::TestHardSwishQuantized(int, const T*, T*, float*, float, float, float, float, std::minstd_rand*, float*, float*) [with T = signed char]	648	static
+random.h:146:7:_Tp std::__detail::__mod(_Tp) [with _Tp = unsigned int; _Tp __m = 2147483647; _Tp __a = 48271; _Tp __c = 0]	16	static
+random.h:282:7:std::linear_congruential_engine<_UIntType, __a, __c, __m>::linear_congruential_engine(std::linear_congruential_engine<_UIntType, __a, __c, __m>::result_type) [with _UIntType = unsigned int; _UIntType __a = 48271; _UIntType __c = 0; _UIntType __m = 2147483647]	16	static
+test_helpers.h:249:14:float tflite::testing::ScaleFromMinMax(float, float) [with T = signed char]	32	static
+test_helpers.h:257:12:int tflite::testing::ZeroPointFromMinMax(float, float) [with T = signed char]	32	static
+test_helpers.h:199:14:TfLiteTensor tflite::testing::CreateQuantizedTensor(const float*, T*, TfLiteIntArray*, float, int, bool) [with T = signed char]	48	static
+test_helpers.h:189:14:TfLiteTensor tflite::testing::CreateQuantizedTensor(const T*, TfLiteIntArray*, float, int, bool) [with T = signed char]	32	static
+micro_utils.h:128:6:void tflite::Dequantize(const T*, int, float, int, float*) [with T = signed char]	40	static
+random.tcc:52:7:static _Tp std::__detail::_Mod<_Tp, __m, __a, __c, false, true>::__calc(_Tp) [with _Tp = unsigned int; _Tp __m = 2147483647; _Tp __a = 48271; _Tp __c = 0]	24	static
+random.tcc:116:5:void std::linear_congruential_engine<_UIntType, __a, __c, __m>::seed(std::linear_congruential_engine<_UIntType, __a, __c, __m>::result_type) [with _UIntType = unsigned int; _UIntType __a = 48271; _UIntType __c = 0; _UIntType __m = 2147483647]	16	static
+micro_utils.h:69:6:void tflite::Quantize(const float*, T*, int, float, int) [with T = signed char]	48	static
+test_helpers.h:169:14:TfLiteTensor tflite::testing::CreateTensor(const T*, TfLiteIntArray*, bool) [with T = signed char]	24	static
+random.h:146:7:_Tp std::__detail::__mod(_Tp) [with _Tp = unsigned int; _Tp __m = 2147483647; _Tp __a = 1; _Tp __c = 0]	16	static
+micro_utils.h:36:3:T tflite::FloatToQuantizedType(float, float, int) [with T = signed char]	48	static
+random.h:135:2:static _Tp std::__detail::_Mod<_Tp, __m, __a, __c, true, __s>::__calc(_Tp) [with _Tp = unsigned int; _Tp __m = 2147483647; _Tp __a = 1; _Tp __c = 0; bool __s = true]	24	static
+stl_algobase.h:222:5:constexpr const _Tp& std::max(const _Tp&, const _Tp&) [with _Tp = long int]	16	static
+mock_micro_graph.h:29:7:tflite::MockMicroGraph::~MockMicroGraph()	16	static
+mock_micro_graph.h:29:7:virtual tflite::MockMicroGraph::~MockMicroGraph()	16	static

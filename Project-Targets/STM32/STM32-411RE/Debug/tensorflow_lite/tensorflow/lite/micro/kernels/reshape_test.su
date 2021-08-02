@@ -1,0 +1,39 @@
+gthr-default.h:229:1:int __gthread_key_delete(__gthread_key_t)	16	static
+portable_type_to_tflitetype.h:61:1:constexpr TfLiteType tflite::typeToTfLiteType() [with T = long int]	4	static
+portable_type_to_tflitetype.h:63:1:constexpr TfLiteType tflite::typeToTfLiteType() [with T = short int]	4	static
+portable_type_to_tflitetype.h:65:1:constexpr TfLiteType tflite::typeToTfLiteType() [with T = float]	4	static
+portable_type_to_tflitetype.h:66:1:constexpr TfLiteType tflite::typeToTfLiteType() [with T = unsigned char]	4	static
+portable_type_to_tflitetype.h:67:1:constexpr TfLiteType tflite::typeToTfLiteType() [with T = signed char]	4	static
+micro_test.h:78:13:void tflite::InitializeTest()	8	static
+reshape_test.cc:115:6:void tflite::testing::{anonymous}::TestReshape(int*, const float*, int*, const int32_t*, int*, float*, const float*, size_t, int*, size_t, bool)	248	static
+reshape_test.cc:158:1:int main(int, char**)	1080	static
+test_helpers.h:169:14:TfLiteTensor tflite::testing::CreateTensor(const T*, TfLiteIntArray*, bool) [with T = float]	24	static
+test_helpers.h:169:14:TfLiteTensor tflite::testing::CreateTensor(const T*, TfLiteIntArray*, bool) [with T = long int]	24	static
+reshape_test.cc:67:6:void tflite::testing::{anonymous}::TestReshapeWithShape(TfLiteTensor*, TfLiteTensor*, TfLiteTensor*, const T*, size_t, int*, size_t, bool) [with T = float]	288	static
+reshape_test.cc:92:6:void tflite::testing::{anonymous}::TestReshapeWithoutShape(TfLiteTensor*, TfLiteTensor*, const T*, size_t, int*, size_t, bool) [with T = int]	224	static
+reshape_test.cc:134:6:void tflite::testing::{anonymous}::TestReshapeQuantized(int*, const T*, int*, const int32_t*, int*, T*, const T*, size_t, int*, size_t, bool) [with T = signed char]	248	static
+reshape_test.cc:134:6:void tflite::testing::{anonymous}::TestReshapeQuantized(int*, const T*, int*, const int32_t*, int*, T*, const T*, size_t, int*, size_t, bool) [with T = unsigned char]	248	static
+reshape_test.cc:134:6:void tflite::testing::{anonymous}::TestReshapeQuantized(int*, const T*, int*, const int32_t*, int*, T*, const T*, size_t, int*, size_t, bool) [with T = short int]	248	static
+reshape_test.cc:92:6:void tflite::testing::{anonymous}::TestReshapeWithoutShape(TfLiteTensor*, TfLiteTensor*, const T*, size_t, int*, size_t, bool) [with T = float]	224	static
+mock_micro_graph.h:29:7:tflite::MockMicroGraph::~MockMicroGraph()	16	static
+mock_micro_graph.h:29:7:virtual tflite::MockMicroGraph::~MockMicroGraph()	16	static
+kernel_runner.h:33:7:tflite::micro::KernelRunner::~KernelRunner()	16	static
+reshape_test.cc:34:6:void tflite::testing::{anonymous}::ValidateReshapeGoldens(TfLiteTensor*, int, TfLiteIntArray*, TfLiteIntArray*, const T*, size_t, int*, size_t, bool) [with T = float]	416	static
+reshape_test.cc:34:6:void tflite::testing::{anonymous}::ValidateReshapeGoldens(TfLiteTensor*, int, TfLiteIntArray*, TfLiteIntArray*, const T*, size_t, int*, size_t, bool) [with T = int]	416	static
+test_helpers.h:189:14:TfLiteTensor tflite::testing::CreateQuantizedTensor(const T*, TfLiteIntArray*, float, int, bool) [with T = signed char]	32	static
+reshape_test.cc:67:6:void tflite::testing::{anonymous}::TestReshapeWithShape(TfLiteTensor*, TfLiteTensor*, TfLiteTensor*, const T*, size_t, int*, size_t, bool) [with T = signed char]	288	static
+test_helpers.h:189:14:TfLiteTensor tflite::testing::CreateQuantizedTensor(const T*, TfLiteIntArray*, float, int, bool) [with T = unsigned char]	32	static
+reshape_test.cc:67:6:void tflite::testing::{anonymous}::TestReshapeWithShape(TfLiteTensor*, TfLiteTensor*, TfLiteTensor*, const T*, size_t, int*, size_t, bool) [with T = unsigned char]	288	static
+test_helpers.h:189:14:TfLiteTensor tflite::testing::CreateQuantizedTensor(const T*, TfLiteIntArray*, float, int, bool) [with T = short int]	32	static
+reshape_test.cc:67:6:void tflite::testing::{anonymous}::TestReshapeWithShape(TfLiteTensor*, TfLiteTensor*, TfLiteTensor*, const T*, size_t, int*, size_t, bool) [with T = short int]	288	static
+tensor_ctypes.h:24:11:T* tflite::GetTensorData(TfLiteTensor*) [with T = float]	16	static
+tensor_ctypes.h:24:11:T* tflite::GetTensorData(TfLiteTensor*) [with T = int]	16	static
+test_helpers.h:169:14:TfLiteTensor tflite::testing::CreateTensor(const T*, TfLiteIntArray*, bool) [with T = signed char]	24	static
+reshape_test.cc:34:6:void tflite::testing::{anonymous}::ValidateReshapeGoldens(TfLiteTensor*, int, TfLiteIntArray*, TfLiteIntArray*, const T*, size_t, int*, size_t, bool) [with T = signed char]	408	static
+test_helpers.h:169:14:TfLiteTensor tflite::testing::CreateTensor(const T*, TfLiteIntArray*, bool) [with T = unsigned char]	24	static
+reshape_test.cc:34:6:void tflite::testing::{anonymous}::ValidateReshapeGoldens(TfLiteTensor*, int, TfLiteIntArray*, TfLiteIntArray*, const T*, size_t, int*, size_t, bool) [with T = unsigned char]	408	static
+test_helpers.h:169:14:TfLiteTensor tflite::testing::CreateTensor(const T*, TfLiteIntArray*, bool) [with T = short int]	24	static
+reshape_test.cc:34:6:void tflite::testing::{anonymous}::ValidateReshapeGoldens(TfLiteTensor*, int, TfLiteIntArray*, TfLiteIntArray*, const T*, size_t, int*, size_t, bool) [with T = short int]	408	static
+tensor_ctypes.h:24:11:T* tflite::GetTensorData(TfLiteTensor*) [with T = signed char]	16	static
+tensor_ctypes.h:24:11:T* tflite::GetTensorData(TfLiteTensor*) [with T = unsigned char]	16	static
+tensor_ctypes.h:24:11:T* tflite::GetTensorData(TfLiteTensor*) [with T = short int]	16	static

@@ -1,0 +1,17 @@
+gthr-default.h:229:1:int __gthread_key_delete(__gthread_key_t)	16	static
+portable_type_to_tflitetype.h:61:1:constexpr TfLiteType tflite::typeToTfLiteType() [with T = long int]	4	static
+portable_type_to_tflitetype.h:65:1:constexpr TfLiteType tflite::typeToTfLiteType() [with T = float]	4	static
+portable_type_to_tflitetype.h:66:1:constexpr TfLiteType tflite::typeToTfLiteType() [with T = unsigned char]	4	static
+micro_test.h:78:13:void tflite::InitializeTest()	8	static
+kernel_runner.h:33:7:tflite::micro::KernelRunner::~KernelRunner()	16	static
+split_test.cc:27:6:void tflite::testing::TestSplitTwoOutputsFloat(int*, const float*, int*, const int32_t*, int*, const float*, int*, const float*, float*, float*)	736	static
+split_test.cc:82:6:void tflite::testing::TestSplitFourOutputsFloat(int*, const float*, int*, const int32_t*, int*, const float*, int*, const float*, int*, const float*, int*, const float*, float*, float*, float*, float*)	928	static
+split_test.cc:155:6:void tflite::testing::TestSplitTwoOutputsQuantized(int*, const uint8_t*, int*, const int32_t*, int*, const uint8_t*, int*, const uint8_t*, uint8_t*, uint8_t*)	720	static
+split_test.cc:211:6:void tflite::testing::TestSplitTwoOutputsQuantized32(int*, const int32_t*, int*, const int32_t*, int*, const int32_t*, int*, const int32_t*, int32_t*, int32_t*)	728	static
+split_test.cc:269:1:int main(int, char**)	1048	static
+test_helpers.h:169:14:TfLiteTensor tflite::testing::CreateTensor(const T*, TfLiteIntArray*, bool) [with T = long int]	24	static
+test_helpers.h:169:14:TfLiteTensor tflite::testing::CreateTensor(const T*, TfLiteIntArray*, bool) [with T = float]	24	static
+test_helpers.h:189:14:TfLiteTensor tflite::testing::CreateQuantizedTensor(const T*, TfLiteIntArray*, float, int, bool) [with T = unsigned char]	32	static
+test_helpers.h:169:14:TfLiteTensor tflite::testing::CreateTensor(const T*, TfLiteIntArray*, bool) [with T = unsigned char]	24	static
+mock_micro_graph.h:29:7:tflite::MockMicroGraph::~MockMicroGraph()	16	static
+mock_micro_graph.h:29:7:virtual tflite::MockMicroGraph::~MockMicroGraph()	16	static

@@ -1,0 +1,5 @@
+error_reporter.h:37:11:tflite::ErrorReporter::~ErrorReporter()	16	static
+error_reporter.h:37:11:virtual tflite::ErrorReporter::~ErrorReporter()	16	static
+micro_error_reporter.h:40:3:tflite::MicroErrorReporter::~MicroErrorReporter()	16	static
+micro_error_reporter.h:40:3:virtual tflite::MicroErrorReporter::~MicroErrorReporter()	16	static
+micro_error_reporter_test.cc:18:5:int main(int, char**)	24	static

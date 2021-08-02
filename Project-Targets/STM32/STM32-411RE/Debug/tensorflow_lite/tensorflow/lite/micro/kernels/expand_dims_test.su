@@ -1,0 +1,14 @@
+gthr-default.h:229:1:int __gthread_key_delete(__gthread_key_t)	16	static
+portable_type_to_tflitetype.h:61:1:constexpr TfLiteType tflite::typeToTfLiteType() [with T = long int]	4	static
+portable_type_to_tflitetype.h:65:1:constexpr TfLiteType tflite::typeToTfLiteType() [with T = float]	4	static
+portable_type_to_tflitetype.h:67:1:constexpr TfLiteType tflite::typeToTfLiteType() [with T = signed char]	4	static
+micro_test.h:78:13:void tflite::InitializeTest()	8	static
+expand_dims_test.cc:75:1:int main(int, char**)	720	static
+mock_micro_graph.h:29:7:tflite::MockMicroGraph::~MockMicroGraph()	16	static
+mock_micro_graph.h:29:7:virtual tflite::MockMicroGraph::~MockMicroGraph()	16	static
+kernel_runner.h:33:7:tflite::micro::KernelRunner::~KernelRunner()	16	static
+expand_dims_test.cc:28:6:void tflite::testing::{anonymous}::TestExpandDims(int*, const T*, int*, const int32_t*, int*, int*, const T*, T*) [with T = signed char]	664	static
+expand_dims_test.cc:28:6:void tflite::testing::{anonymous}::TestExpandDims(int*, const T*, int*, const int32_t*, int*, int*, const T*, T*) [with T = float]	664	static
+test_helpers.h:169:14:TfLiteTensor tflite::testing::CreateTensor(const T*, TfLiteIntArray*, bool) [with T = signed char]	24	static
+test_helpers.h:169:14:TfLiteTensor tflite::testing::CreateTensor(const T*, TfLiteIntArray*, bool) [with T = long int]	24	static
+test_helpers.h:169:14:TfLiteTensor tflite::testing::CreateTensor(const T*, TfLiteIntArray*, bool) [with T = float]	24	static

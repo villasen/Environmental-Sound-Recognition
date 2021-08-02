@@ -1,0 +1,10 @@
+gthr-default.h:229:1:int __gthread_key_delete(__gthread_key_t)	16	static
+portable_type_to_tflitetype.h:65:1:constexpr TfLiteType tflite::typeToTfLiteType() [with T = float]	4	static
+micro_test.h:78:13:void tflite::InitializeTest()	8	static
+kernel_runner.h:33:7:tflite::micro::KernelRunner::~KernelRunner()	16	static
+l2_pool_2d_test.cc:43:6:void tflite::testing::{anonymous}::ExecuteL2Pool2DTest(const tflite::testing::{anonymous}::L2Pool2DTestParams&, TfLiteTensor*, int)	432	static
+l2_pool_2d_test.cc:97:1:int main(int, char**)	592	static
+l2_pool_2d_test.cc:67:6:void tflite::testing::{anonymous}::TestL2Pool2D(tflite::testing::{anonymous}::L2Pool2DTestParams&, int*, const T*, int*, const T*, T*) [with T = float]	224	static
+test_helpers.h:169:14:TfLiteTensor tflite::testing::CreateTensor(const T*, TfLiteIntArray*, bool) [with T = float]	24	static
+mock_micro_graph.h:29:7:tflite::MockMicroGraph::~MockMicroGraph()	16	static
+mock_micro_graph.h:29:7:virtual tflite::MockMicroGraph::~MockMicroGraph()	16	static

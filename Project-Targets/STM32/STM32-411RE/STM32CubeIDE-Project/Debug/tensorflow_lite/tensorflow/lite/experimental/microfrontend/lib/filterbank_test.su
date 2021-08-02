@@ -1,0 +1,3 @@
+micro_test.h:78:13:void tflite::InitializeTest()	8	static
+filterbank_test.cc:37:3:{anonymous}::FilterbankTestConfig::FilterbankTestConfig()	16	static
+filterbank_test.cc:48:1:int main(int, char**)	480	static

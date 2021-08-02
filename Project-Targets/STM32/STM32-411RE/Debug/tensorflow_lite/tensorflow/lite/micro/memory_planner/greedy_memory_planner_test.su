@@ -1,0 +1,6 @@
+error_reporter.h:37:11:tflite::ErrorReporter::~ErrorReporter()	16	static
+error_reporter.h:37:11:virtual tflite::ErrorReporter::~ErrorReporter()	16	static
+micro_error_reporter.h:40:3:tflite::MicroErrorReporter::~MicroErrorReporter()	16	static
+micro_error_reporter.h:40:3:virtual tflite::MicroErrorReporter::~MicroErrorReporter()	16	static
+micro_test.h:78:13:void tflite::InitializeTest()	8	static
+greedy_memory_planner_test.cc:32:1:int main(int, char**)	2264	static

@@ -1,0 +1,42 @@
+error_reporter.h:37:11:tflite::ErrorReporter::~ErrorReporter()	16	static
+error_reporter.h:37:11:virtual tflite::ErrorReporter::~ErrorReporter()	16	static
+gthr-default.h:229:1:int __gthread_key_delete(__gthread_key_t)	16	static
+stl_vector.h:285:7:std::_Vector_base<_Tp, _Alloc>::_Vector_base() [with _Tp = std::unique_ptr<TfLiteDelegate, void (*)(TfLiteDelegate*)>; _Alloc = std::allocator<std::unique_ptr<TfLiteDelegate, void (*)(TfLiteDelegate*)> >]	16	static
+stl_vector.h:484:7:std::vector<_Tp, _Alloc>::vector() [with _Tp = std::unique_ptr<TfLiteDelegate, void (*)(TfLiteDelegate*)>; _Alloc = std::allocator<std::unique_ptr<TfLiteDelegate, void (*)(TfLiteDelegate*)> >]	16	static
+op_resolver.h:44:35:virtual tflite::OpResolver::TfLiteDelegatePtrVector tflite::OpResolver::GetDelegates(int) const	24	static
+op_resolver.h:48:11:tflite::OpResolver::~OpResolver()	16	static
+op_resolver.h:48:11:virtual tflite::OpResolver::~OpResolver()	16	static
+op_resolver.h:62:16:virtual bool tflite::OpResolver::MayContainUserDefinedOps() const	16	static
+micro_op_resolver.h:53:29:virtual const TfLiteRegistration* tflite::MicroOpResolver::FindOp(tflite::BuiltinOperator, int) const	24	static
+micro_op_resolver.h:60:29:virtual const TfLiteRegistration* tflite::MicroOpResolver::FindOp(const char*, int) const	24	static
+micro_op_resolver.h:68:3:tflite::MicroOpResolver::~MicroOpResolver()	16	static
+micro_op_resolver.h:68:3:virtual tflite::MicroOpResolver::~MicroOpResolver()	16	static
+micro_test.h:78:13:void tflite::InitializeTest()	8	static
+micro_mutable_op_resolver_test.cc:23:7:void* tflite::{anonymous}::MockInit(TfLiteContext*, const char*, size_t)	24	static
+micro_mutable_op_resolver_test.cc:28:6:void tflite::{anonymous}::MockFree(TfLiteContext*, void*)	16	static
+micro_mutable_op_resolver_test.cc:32:14:TfLiteStatus tflite::{anonymous}::MockPrepare(TfLiteContext*, TfLiteNode*)	16	static
+micro_mutable_op_resolver_test.cc:36:14:TfLiteStatus tflite::{anonymous}::MockInvoke(TfLiteContext*, TfLiteNode*)	16	static
+error_reporter.h:35:7:constexpr tflite::ErrorReporter::ErrorReporter()	16	static
+micro_mutable_op_resolver_test.cc:42:3:tflite::{anonymous}::MockErrorReporter::MockErrorReporter()	16	static
+micro_mutable_op_resolver_test.cc:43:7:virtual int tflite::{anonymous}::MockErrorReporter::Report(const char*, va_list)	24	static
+micro_mutable_op_resolver_test.cc:48:8:bool tflite::{anonymous}::MockErrorReporter::HasBeenCalled()	16	static
+micro_mutable_op_resolver_test.cc:50:8:void tflite::{anonymous}::MockErrorReporter::ResetState()	16	static
+micro_mutable_op_resolver_test.cc:60:1:int main(int, char**)	128	static
+stl_vector.h:128:2:std::_Vector_base<_Tp, _Alloc>::_Vector_impl::_Vector_impl() [with _Tp = std::unique_ptr<TfLiteDelegate, void (*)(TfLiteDelegate*)>; _Alloc = std::allocator<std::unique_ptr<TfLiteDelegate, void (*)(TfLiteDelegate*)> >]	16	static
+op_resolver.h:30:7:constexpr tflite::OpResolver::OpResolver()	16	static
+micro_op_resolver.h:35:7:constexpr tflite::MicroOpResolver::MicroOpResolver()	16	static
+micro_mutable_op_resolver.h:43:12:tflite::MicroMutableOpResolver<tOpCount>::MicroMutableOpResolver(tflite::ErrorReporter*) [with unsigned int tOpCount = 1]	16	static
+micro_mutable_op_resolver.h:84:16:TfLiteStatus tflite::MicroMutableOpResolver<tOpCount>::AddCustom(const char*, TfLiteRegistration*) [with unsigned int tOpCount = 1]	40	static
+micro_mutable_op_resolver.h:531:16:unsigned int tflite::MicroMutableOpResolver<tOpCount>::GetRegistrationLength() [with unsigned int tOpCount = 1]	16	static
+micro_mutable_op_resolver.h:407:16:TfLiteStatus tflite::MicroMutableOpResolver<tOpCount>::AddRelu() [with unsigned int tOpCount = 1]	48	static
+allocator.h:138:7:std::allocator< <template-parameter-1-1> >::allocator() [with _Tp = std::unique_ptr<TfLiteDelegate, void (*)(TfLiteDelegate*)>]	16	static
+stl_vector.h:94:2:std::_Vector_base<_Tp, _Alloc>::_Vector_impl_data::_Vector_impl_data() [with _Tp = std::unique_ptr<TfLiteDelegate, void (*)(TfLiteDelegate*)>; _Alloc = std::allocator<std::unique_ptr<TfLiteDelegate, void (*)(TfLiteDelegate*)> >]	16	static
+micro_mutable_op_resolver.h:58:29:const TfLiteRegistration* tflite::MicroMutableOpResolver<tOpCount>::FindOp(const char*) const [with unsigned int tOpCount = 1]	24	static
+micro_mutable_op_resolver.h:534:16:TfLiteStatus tflite::MicroMutableOpResolver<tOpCount>::AddBuiltin(tflite::BuiltinOperator, const TfLiteRegistration&, tflite::MicroOpResolver::BuiltinParseFunction) [with unsigned int tOpCount = 1]	32	static
+new_allocator.h:80:7:__gnu_cxx::new_allocator<_Tp>::new_allocator() [with _Tp = std::unique_ptr<TfLiteDelegate, void (*)(TfLiteDelegate*)>]	16	static
+micro_mutable_op_resolver.h:46:29:const TfLiteRegistration* tflite::MicroMutableOpResolver<tOpCount>::FindOp(tflite::BuiltinOperator) const [with unsigned int tOpCount = 1]	24	static
+micro_mutable_op_resolver.h:39:7:tflite::MicroMutableOpResolver<1>::~MicroMutableOpResolver()	16	static
+micro_mutable_op_resolver.h:39:7:virtual tflite::MicroMutableOpResolver<1>::~MicroMutableOpResolver()	16	static
+micro_mutable_op_resolver_test.cc:40:7:tflite::{anonymous}::MockErrorReporter::~MockErrorReporter()	16	static
+micro_mutable_op_resolver_test.cc:40:7:virtual tflite::{anonymous}::MockErrorReporter::~MockErrorReporter()	16	static
+micro_mutable_op_resolver.h:69:41:TfLiteStatus (* tflite::MicroMutableOpResolver<tOpCount>::GetOpDataParser(tflite::BuiltinOperator) const)(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**) [with unsigned int tOpCount = 1]	24	static

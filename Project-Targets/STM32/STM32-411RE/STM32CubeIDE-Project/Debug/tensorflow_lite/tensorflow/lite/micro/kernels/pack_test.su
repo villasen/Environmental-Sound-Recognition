@@ -1,0 +1,20 @@
+gthr-default.h:229:1:int __gthread_key_delete(__gthread_key_t)	16	static
+portable_type_to_tflitetype.h:61:1:constexpr TfLiteType tflite::typeToTfLiteType() [with T = long int]	4	static
+portable_type_to_tflitetype.h:65:1:constexpr TfLiteType tflite::typeToTfLiteType() [with T = float]	4	static
+portable_type_to_tflitetype.h:66:1:constexpr TfLiteType tflite::typeToTfLiteType() [with T = unsigned char]	4	static
+micro_test.h:78:13:void tflite::InitializeTest()	8	static
+pack_test.cc:48:6:void tflite::testing::TestPackTwoInputsFloat(int*, const float*, int*, const float*, int, int*, const float*, float*)	312	static
+pack_test.cc:79:6:void tflite::testing::TestPackThreeInputsFloat(int*, const float*, int*, const float*, int*, const float*, int, int*, const float*, float*)	384	static
+pack_test.cc:113:6:void tflite::testing::TestPackTwoInputsQuantized(int*, const uint8_t*, int*, const uint8_t*, int, int*, const uint8_t*, uint8_t*)	312	static
+pack_test.cc:147:6:void tflite::testing::TestPackTwoInputsQuantized32(int*, const int32_t*, int*, const int32_t*, int, int*, const int32_t*, int32_t*)	312	static
+pack_test.cc:180:1:int main(int, char**)	688	static
+test_helpers.h:169:14:TfLiteTensor tflite::testing::CreateTensor(const T*, TfLiteIntArray*, bool) [with T = float]	24	static
+mock_micro_graph.h:29:7:tflite::MockMicroGraph::~MockMicroGraph()	16	static
+mock_micro_graph.h:29:7:virtual tflite::MockMicroGraph::~MockMicroGraph()	16	static
+kernel_runner.h:33:7:tflite::micro::KernelRunner::~KernelRunner()	16	static
+pack_test.cc:27:6:void tflite::testing::ValidatePackGoldens(TfLiteTensor*, int, TfLitePackParams, TfLiteIntArray*, TfLiteIntArray*, const T*, int, float, T*) [with T = float]	400	static
+test_helpers.h:189:14:TfLiteTensor tflite::testing::CreateQuantizedTensor(const T*, TfLiteIntArray*, float, int, bool) [with T = unsigned char]	32	static
+pack_test.cc:27:6:void tflite::testing::ValidatePackGoldens(TfLiteTensor*, int, TfLitePackParams, TfLiteIntArray*, TfLiteIntArray*, const T*, int, float, T*) [with T = unsigned char]	392	static
+test_helpers.h:169:14:TfLiteTensor tflite::testing::CreateTensor(const T*, TfLiteIntArray*, bool) [with T = long int]	24	static
+pack_test.cc:27:6:void tflite::testing::ValidatePackGoldens(TfLiteTensor*, int, TfLitePackParams, TfLiteIntArray*, TfLiteIntArray*, const T*, int, float, T*) [with T = long int]	400	static
+test_helpers.h:169:14:TfLiteTensor tflite::testing::CreateTensor(const T*, TfLiteIntArray*, bool) [with T = unsigned char]	24	static

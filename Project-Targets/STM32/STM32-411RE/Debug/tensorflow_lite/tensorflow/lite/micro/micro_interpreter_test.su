@@ -1,0 +1,57 @@
+gthr-default.h:229:1:int __gthread_key_delete(__gthread_key_t)	16	static
+flatbuffers.h:2436:18:const uint8_t* flatbuffers::Table::GetVTable() const	24	static
+flatbuffers.h:2442:13:flatbuffers::voffset_t flatbuffers::Table::GetOptionalFieldOffset(flatbuffers::voffset_t) const	24	static
+schema_generated.h:11443:39:const flatbuffers::Vector<long int>* tflite::SubGraph::inputs() const	16	static
+schema_generated.h:11446:39:const flatbuffers::Vector<long int>* tflite::SubGraph::outputs() const	16	static
+schema_generated.h:11905:69:const flatbuffers::Vector<flatbuffers::Offset<tflite::SubGraph> >* tflite::Model::subgraphs() const	16	static
+stl_vector.h:285:7:std::_Vector_base<_Tp, _Alloc>::_Vector_base() [with _Tp = std::unique_ptr<TfLiteDelegate, void (*)(TfLiteDelegate*)>; _Alloc = std::allocator<std::unique_ptr<TfLiteDelegate, void (*)(TfLiteDelegate*)> >]	16	static
+stl_vector.h:484:7:std::vector<_Tp, _Alloc>::vector() [with _Tp = std::unique_ptr<TfLiteDelegate, void (*)(TfLiteDelegate*)>; _Alloc = std::allocator<std::unique_ptr<TfLiteDelegate, void (*)(TfLiteDelegate*)> >]	16	static
+op_resolver.h:44:35:virtual tflite::OpResolver::TfLiteDelegatePtrVector tflite::OpResolver::GetDelegates(int) const	24	static
+op_resolver.h:48:11:tflite::OpResolver::~OpResolver()	16	static
+op_resolver.h:48:11:virtual tflite::OpResolver::~OpResolver()	16	static
+op_resolver.h:62:16:virtual bool tflite::OpResolver::MayContainUserDefinedOps() const	16	static
+micro_op_resolver.h:53:29:virtual const TfLiteRegistration* tflite::MicroOpResolver::FindOp(tflite::BuiltinOperator, int) const	24	static
+micro_op_resolver.h:60:29:virtual const TfLiteRegistration* tflite::MicroOpResolver::FindOp(const char*, int) const	24	static
+micro_op_resolver.h:68:3:tflite::MicroOpResolver::~MicroOpResolver()	16	static
+micro_op_resolver.h:68:3:virtual tflite::MicroOpResolver::~MicroOpResolver()	16	static
+micro_interpreter.h:73:10:size_t tflite::MicroInterpreter::inputs_size() const	16	static
+micro_interpreter.h:91:10:size_t tflite::MicroInterpreter::outputs_size() const	16	static
+micro_interpreter.h:125:10:size_t tflite::MicroInterpreter::arena_used_bytes() const	16	static
+micro_test.h:78:13:void tflite::InitializeTest()	8	static
+micro_profiler.h:31:3:tflite::MicroProfiler::MicroProfiler()	16	static
+micro_profiler.h:32:11:tflite::MicroProfiler::~MicroProfiler()	16	static
+micro_profiler.h:32:11:virtual tflite::MicroProfiler::~MicroProfiler()	16	static
+micro_interpreter_test.cc:35:3:tflite::{anonymous}::MockProfiler::MockProfiler()	16	static
+micro_interpreter_test.cc:37:12:virtual uint32_t tflite::{anonymous}::MockProfiler::BeginEvent(const char*)	16	static
+micro_interpreter_test.cc:42:8:virtual void tflite::{anonymous}::MockProfiler::EndEvent(uint32_t)	16	static
+micro_interpreter_test.cc:44:7:int tflite::{anonymous}::MockProfiler::event_starts()	16	static
+micro_interpreter_test.cc:45:7:int tflite::{anonymous}::MockProfiler::event_ends()	16	static
+micro_mutable_op_resolver.h:39:7:tflite::MicroMutableOpResolver<128>::~MicroMutableOpResolver()	16	static
+micro_mutable_op_resolver.h:39:7:virtual tflite::MicroMutableOpResolver<128>::~MicroMutableOpResolver()	16	static
+micro_interpreter_test.cc:57:1:int main(int, char**)	20288	static
+base.h:390:24:T flatbuffers::EndianScalar(T) [with T = long unsigned int]	16	static
+base.h:401:3:T flatbuffers::ReadScalar(const void*) [with T = short unsigned int]	16	static
+base.h:401:3:T flatbuffers::ReadScalar(const void*) [with T = long unsigned int]	16	static
+base.h:401:3:T flatbuffers::ReadScalar(const void*) [with T = long int]	16	static
+flatbuffers.h:2463:26:P flatbuffers::Table::GetPointer(flatbuffers::voffset_t) const [with P = const flatbuffers::Vector<long int>*]	16	static
+flatbuffers.h:2463:26:P flatbuffers::Table::GetPointer(flatbuffers::voffset_t) const [with P = const flatbuffers::Vector<flatbuffers::Offset<tflite::SubGraph> >*]	16	static
+flatbuffers.h:252:13:flatbuffers::uoffset_t flatbuffers::Vector<T>::size() const [with T = long int]	16	static
+flatbuffers.h:252:13:flatbuffers::uoffset_t flatbuffers::Vector<T>::size() const [with T = flatbuffers::Offset<tflite::SubGraph>]	16	static
+flatbuffers.h:261:15:flatbuffers::Vector<T>::return_type flatbuffers::Vector<T>::Get(flatbuffers::uoffset_t) const [with T = flatbuffers::Offset<tflite::SubGraph>]	16	static
+stl_vector.h:128:2:std::_Vector_base<_Tp, _Alloc>::_Vector_impl::_Vector_impl() [with _Tp = std::unique_ptr<TfLiteDelegate, void (*)(TfLiteDelegate*)>; _Alloc = std::allocator<std::unique_ptr<TfLiteDelegate, void (*)(TfLiteDelegate*)> >]	16	static
+base.h:390:24:T flatbuffers::EndianScalar(T) [with T = long int]	16	static
+base.h:390:24:T flatbuffers::EndianScalar(T) [with T = short unsigned int]	16	static
+flatbuffers.h:2457:26:P flatbuffers::Table::GetPointer(flatbuffers::voffset_t) [with P = const flatbuffers::Vector<long int>*]	24	static
+flatbuffers.h:2457:26:P flatbuffers::Table::GetPointer(flatbuffers::voffset_t) [with P = const flatbuffers::Vector<flatbuffers::Offset<tflite::SubGraph> >*]	24	static
+flatbuffers.h:117:22:static const T* flatbuffers::IndirectHelper<flatbuffers::Offset<T> >::Read(const uint8_t*, flatbuffers::uoffset_t) [with T = tflite::SubGraph]	16	static
+flatbuffers.h:339:18:const uint8_t* flatbuffers::Vector<T>::Data() const [with T = flatbuffers::Offset<tflite::SubGraph>]	16	static
+allocator.h:138:7:std::allocator< <template-parameter-1-1> >::allocator() [with _Tp = std::unique_ptr<TfLiteDelegate, void (*)(TfLiteDelegate*)>]	16	static
+stl_vector.h:94:2:std::_Vector_base<_Tp, _Alloc>::_Vector_impl_data::_Vector_impl_data() [with _Tp = std::unique_ptr<TfLiteDelegate, void (*)(TfLiteDelegate*)>; _Alloc = std::allocator<std::unique_ptr<TfLiteDelegate, void (*)(TfLiteDelegate*)> >]	16	static
+new_allocator.h:80:7:__gnu_cxx::new_allocator<_Tp>::new_allocator() [with _Tp = std::unique_ptr<TfLiteDelegate, void (*)(TfLiteDelegate*)>]	16	static
+micro_interpreter_test.cc:33:7:tflite::{anonymous}::MockProfiler::~MockProfiler()	16	static
+micro_interpreter_test.cc:33:7:virtual tflite::{anonymous}::MockProfiler::~MockProfiler()	16	static
+all_ops_resolver.h:28:7:tflite::AllOpsResolver::~AllOpsResolver()	16	static
+all_ops_resolver.h:28:7:virtual tflite::AllOpsResolver::~AllOpsResolver()	16	static
+micro_mutable_op_resolver.h:46:29:const TfLiteRegistration* tflite::MicroMutableOpResolver<tOpCount>::FindOp(tflite::BuiltinOperator) const [with unsigned int tOpCount = 128]	24	static
+micro_mutable_op_resolver.h:58:29:const TfLiteRegistration* tflite::MicroMutableOpResolver<tOpCount>::FindOp(const char*) const [with unsigned int tOpCount = 128]	24	static
+micro_mutable_op_resolver.h:69:41:TfLiteStatus (* tflite::MicroMutableOpResolver<tOpCount>::GetOpDataParser(tflite::BuiltinOperator) const)(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**) [with unsigned int tOpCount = 128]	24	static
