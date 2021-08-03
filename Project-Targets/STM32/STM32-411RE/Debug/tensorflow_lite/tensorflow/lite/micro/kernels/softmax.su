@@ -13,7 +13,7 @@ types.h:725:12:int tflite::FlatSizeSkipDim(const tflite::RuntimeShape&, int)	32	
 types.h:737:12:int tflite::MatchingFlatSizeSkipDim(const tflite::RuntimeShape&, int, const tflite::RuntimeShape&)	40	static
 gthr-default.h:229:1:int __gthread_key_delete(__gthread_key_t)	16	static
 cmath:222:3:constexpr float std::exp(float)	16	static
-fixedpoint.h:236:21:IntegerType gemmlowp::RoundingHalfSum(IntegerType, IntegerType) [with IntegerType = long int]	64	static
+fixedpoint.h:236:21:IntegerType gemmlowp::RoundingHalfSum(IntegerType, IntegerType) [with IntegerType = long int]	72	static
 fixedpoint.h:329:21:IntegerType gemmlowp::SaturatingRoundingDoublingHighMul(IntegerType, IntegerType) [with IntegerType = long int]	64	static
 common.h:149:16:int32_t tflite::MultiplyByQuantizedMultiplierGreaterThanOne(int32_t, int32_t, int)	24	static
 common.h:156:16:int32_t tflite::MultiplyByQuantizedMultiplier(int32_t, int32_t, int)	32	static

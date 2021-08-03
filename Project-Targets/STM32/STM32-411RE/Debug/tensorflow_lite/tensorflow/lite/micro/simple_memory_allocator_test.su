@@ -1,3 +1,0 @@
-gthr-default.h:229:1:int __gthread_key_delete(__gthread_key_t)	16	static
-micro_test.h:78:13:void tflite::InitializeTest()	8	static
-simple_memory_allocator_test.cc:24:1:int main(int, char**)	1656	static

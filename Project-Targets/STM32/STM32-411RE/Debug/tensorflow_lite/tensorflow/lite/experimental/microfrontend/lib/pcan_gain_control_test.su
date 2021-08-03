@@ -1,3 +1,0 @@
-micro_test.h:78:13:void tflite::InitializeTest()	8	static
-pcan_gain_control_test.cc:29:3:{anonymous}::PcanGainControlTestConfig::PcanGainControlTestConfig()	16	static
-pcan_gain_control_test.cc:41:1:int main(int, char**)	104	static

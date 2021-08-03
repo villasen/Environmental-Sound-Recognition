@@ -32,7 +32,7 @@ CPP_DEPS :=
 SUBDIRS := \
 Core/Src \
 Core/Startup \
-Drivers/STM32F7xx_HAL_Driver/Src \
+Drivers/STM32F4xx_HAL_Driver/Src \
 tensorflow_lite/tensorflow/lite/c \
 tensorflow_lite/tensorflow/lite/core/api \
 tensorflow_lite/tensorflow/lite/experimental/microfrontend/lib \

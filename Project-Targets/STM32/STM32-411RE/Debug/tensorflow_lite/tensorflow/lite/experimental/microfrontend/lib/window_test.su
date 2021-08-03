@@ -1,3 +1,0 @@
-micro_test.h:78:13:void tflite::InitializeTest()	8	static
-window_test.cc:33:3:{anonymous}::WindowTestConfig::WindowTestConfig()	16	static
-window_test.cc:43:1:int main(int, char**)	400	static

@@ -7,7 +7,7 @@ limits:1344:7:static constexpr long long int std::numeric_limits<long long int>:
 limits:1347:7:static constexpr long long int std::numeric_limits<long long int>::max()	4	static
 limits:1781:7:static constexpr double std::numeric_limits<double>::infinity()	4	static
 limits:1784:7:static constexpr double std::numeric_limits<double>::quiet_NaN()	4	static
-quantization_util.cc:53:6:void tflite::QuantizeMultiplier(double, int32_t*, int*)	40	static
+quantization_util.cc:53:6:void tflite::QuantizeMultiplier(double, int32_t*, int*)	48	static
 quantization_util.cc:93:6:void tflite::QuantizeMultiplierGreaterThanOne(double, int32_t*, int*)	24	static
 quantization_util.cc:101:6:void tflite::QuantizeMultiplierSmallerThanOneExp(double, int32_t*, int*)	32	static
 quantization_util.cc:112:9:int64_t tflite::IntegerFrExp(double, int*)	112	static

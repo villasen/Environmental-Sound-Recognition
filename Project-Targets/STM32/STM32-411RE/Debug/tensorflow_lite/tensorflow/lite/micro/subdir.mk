@@ -7,6 +7,7 @@
 CC_SRCS += \
 ../tensorflow_lite/tensorflow/lite/micro/all_ops_resolver.cc \
 ../tensorflow_lite/tensorflow/lite/micro/debug_log.cc \
+../tensorflow_lite/tensorflow/lite/micro/flatbuffer_utils.cc \
 ../tensorflow_lite/tensorflow/lite/micro/memory_helpers.cc \
 ../tensorflow_lite/tensorflow/lite/micro/micro_allocator.cc \
 ../tensorflow_lite/tensorflow/lite/micro/micro_error_reporter.cc \
@@ -26,6 +27,7 @@ CC_SRCS += \
 CC_DEPS += \
 ./tensorflow_lite/tensorflow/lite/micro/all_ops_resolver.d \
 ./tensorflow_lite/tensorflow/lite/micro/debug_log.d \
+./tensorflow_lite/tensorflow/lite/micro/flatbuffer_utils.d \
 ./tensorflow_lite/tensorflow/lite/micro/memory_helpers.d \
 ./tensorflow_lite/tensorflow/lite/micro/micro_allocator.d \
 ./tensorflow_lite/tensorflow/lite/micro/micro_error_reporter.d \
@@ -45,6 +47,7 @@ CC_DEPS += \
 OBJS += \
 ./tensorflow_lite/tensorflow/lite/micro/all_ops_resolver.o \
 ./tensorflow_lite/tensorflow/lite/micro/debug_log.o \
+./tensorflow_lite/tensorflow/lite/micro/flatbuffer_utils.o \
 ./tensorflow_lite/tensorflow/lite/micro/memory_helpers.o \
 ./tensorflow_lite/tensorflow/lite/micro/micro_allocator.o \
 ./tensorflow_lite/tensorflow/lite/micro/micro_error_reporter.o \
@@ -64,5 +67,5 @@ OBJS += \
 
 # Each subdirectory must supply rules for building sources it contributes
 tensorflow_lite/tensorflow/lite/micro/%.o: ../tensorflow_lite/tensorflow/lite/micro/%.cc tensorflow_lite/tensorflow/lite/micro/subdir.mk
-	arm-none-eabi-g++ "$<" -mcpu=cortex-m7 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/MVillasenor/STM32CubeIDE/workspaceForFirstTrial_STM32/tflie-disco-746/tensorflow_lite" -I"C:/Users/MVillasenor/STM32CubeIDE/workspaceForFirstTrial_STM32/tflie-disco-746/tensorflow_lite/third_party/gemmlowp" -I"C:/Users/MVillasenor/STM32CubeIDE/workspaceForFirstTrial_STM32/tflie-disco-746/tensorflow_lite/third_party/ruy" -I"C:/Users/MVillasenor/STM32CubeIDE/workspaceForFirstTrial_STM32/tflie-disco-746/tensorflow_lite/third_party/flatbuffers/include" -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"$(@:%.o=%.d)" -MT"$@" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "$@"
+	arm-none-eabi-g++ "$<" -mcpu=cortex-m4 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/MVillasenor/STM32CubeIDE/workspaceForFirstTrial_STM32/Thesis-Nucleo-411/tensorflow_lite" -I"C:/Users/MVillasenor/STM32CubeIDE/workspaceForFirstTrial_STM32/Thesis-Nucleo-411/tensorflow_lite/third_party/flatbuffers/include" -I"C:/Users/MVillasenor/STM32CubeIDE/workspaceForFirstTrial_STM32/Thesis-Nucleo-411/tensorflow_lite/third_party/gemmlowp" -I"C:/Users/MVillasenor/STM32CubeIDE/workspaceForFirstTrial_STM32/Thesis-Nucleo-411/tensorflow_lite/third_party/ruy" -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -MMD -MP -MF"$(@:%.o=%.d)" -MT"$@" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "$@"
 

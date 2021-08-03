@@ -1,3 +1,0 @@
-micro_test.h:78:13:void tflite::InitializeTest()	8	static
-noise_reduction_test.cc:27:3:{anonymous}::NoiseReductionTestConfig::NoiseReductionTestConfig()	16	static
-noise_reduction_test.cc:39:1:int main(int, char**)	168	static

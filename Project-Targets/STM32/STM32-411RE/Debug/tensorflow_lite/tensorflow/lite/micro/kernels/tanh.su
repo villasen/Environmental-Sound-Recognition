@@ -3,7 +3,7 @@ limits:928:7:static constexpr short int std::numeric_limits<short int>::max()	4	
 limits:1204:7:static constexpr long int std::numeric_limits<long int>::min()	4	static
 limits:1207:7:static constexpr long int std::numeric_limits<long int>::max()	4	static
 cmath:501:3:constexpr float std::tanh(float)	16	static
-fixedpoint.h:236:21:IntegerType gemmlowp::RoundingHalfSum(IntegerType, IntegerType) [with IntegerType = long int]	64	static
+fixedpoint.h:236:21:IntegerType gemmlowp::RoundingHalfSum(IntegerType, IntegerType) [with IntegerType = long int]	72	static
 fixedpoint.h:245:21:IntegerType gemmlowp::RoundingHalfSum(IntegerType, IntegerType) [with IntegerType = short int]	32	static
 fixedpoint.h:262:21:IntegerType gemmlowp::SaturatingAdd(IntegerType, IntegerType) [with IntegerType = short int]	40	static
 fixedpoint.h:329:21:IntegerType gemmlowp::SaturatingRoundingDoublingHighMul(IntegerType, IntegerType) [with IntegerType = long int]	64	static

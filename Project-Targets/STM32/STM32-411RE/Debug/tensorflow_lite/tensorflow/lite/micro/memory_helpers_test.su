@@ -1,6 +1,0 @@
-gthr-default.h:229:1:int __gthread_key_delete(__gthread_key_t)	16	static
-portable_type_to_tflitetype.h:61:1:constexpr TfLiteType tflite::typeToTfLiteType() [with T = long int]	4	static
-micro_test.h:78:13:void tflite::InitializeTest()	8	static
-memory_helpers_test.cc:31:7:void* {anonymous}::FakeAllocatePersistentBuffer(TfLiteContext*, size_t)	16	static
-memory_helpers_test.cc:37:1:int main(int, char**)	800	static
-test_helpers.h:169:14:TfLiteTensor tflite::testing::CreateTensor(const T*, TfLiteIntArray*, bool) [with T = long int]	24	static

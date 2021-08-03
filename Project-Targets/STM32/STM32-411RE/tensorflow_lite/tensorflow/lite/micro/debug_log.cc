@@ -51,4 +51,5 @@ limitations under the License.
 
 extern "C" void __attribute__((weak)) DebugLog(const char* s) {
   // To be implemented by user
+ // This function gets overriden in main
 }

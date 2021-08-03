@@ -1,3 +1,0 @@
-micro_test.h:78:13:void tflite::InitializeTest()	8	static
-frontend_test.cc:33:3:{anonymous}::FrontendTestConfig::FrontendTestConfig()	16	static
-frontend_test.cc:57:1:int main(int, char**)	336	static

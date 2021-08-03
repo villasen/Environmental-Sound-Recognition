@@ -1,9 +1,0 @@
-gthr-default.h:229:1:int __gthread_key_delete(__gthread_key_t)	16	static
-micro_test.h:78:13:void tflite::InitializeTest()	8	static
-kernel_runner.h:33:7:tflite::micro::KernelRunner::~KernelRunner()	16	static
-squeeze_test.cc:35:6:void tflite::testing::{anonymous}::TestSqueezeOp(int*, const int*, int*, int*, const int*, int, TfLiteSqueezeParams*)	624	static
-squeeze_test.cc:73:1:int main(int, char**)	240	static
-test_helpers.h:169:14:TfLiteTensor tflite::testing::CreateTensor(const T*, TfLiteIntArray*, bool) [with T = int]	24	static
-portable_type_to_tflitetype.h:39:22:constexpr TfLiteType tflite::typeToTfLiteType() [with T = int]	4	static
-mock_micro_graph.h:29:7:tflite::MockMicroGraph::~MockMicroGraph()	16	static
-mock_micro_graph.h:29:7:virtual tflite::MockMicroGraph::~MockMicroGraph()	16	static
