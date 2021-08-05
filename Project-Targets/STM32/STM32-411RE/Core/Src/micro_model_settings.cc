@@ -18,12 +18,14 @@ limitations under the License.
 const char* kCategoryLabels[kCategoryCount] = {
     "silence",
     "unknown",
-    "car_horn",
-    "coughing",
-    "clapping",
-    "gun_shot",
-    "crying_baby",
-    "door_knock",
-    "clock_alarm",
-    "dog_bark",
+	"yes",
+	"no"
+//    "car_horn",
+//    "coughing",
+//    "clapping",
+//    "gun_shot",
+//    "crying_baby",
+//    "door_knock",
+//    "clock_alarm",
+//    "dog_bark",
 };

@@ -19,16 +19,16 @@ micro_op_resolver.h:60:29:virtual const TfLiteRegistration* tflite::MicroOpResol
 micro_op_resolver.h:68:3:tflite::MicroOpResolver::~MicroOpResolver()	16	static
 micro_op_resolver.h:68:3:virtual tflite::MicroOpResolver::~MicroOpResolver()	16	static
 main.cpp:168:38:void __tcf_0()	8	static
-main.cpp:193:46:void __tcf_1()	8	static
-main.cpp:127:5:int main()	320	static
-main.cpp:328:6:void SystemClock_Config()	88	static
-main.cpp:373:13:void MX_TIM10_Init()	8	static
-main.cpp:404:13:void MX_USART1_UART_Init()	8	static
-main.cpp:437:13:void MX_USART2_UART_Init()	8	static
-main.cpp:470:13:void MX_USART6_UART_Init()	8	static
-main.cpp:503:13:void MX_GPIO_Init()	48	static
-main.cpp:532:17:void DebugLog(const char*)	16	static
-main.cpp:542:6:void Error_Handler()	4	static,ignoring_inline_asm
+main.cpp:194:46:void __tcf_1()	8	static
+main.cpp:127:5:int main()	336	static
+main.cpp:395:6:void LogMCU(const char*)	120	static
+main.cpp:407:6:void SystemClock_Config()	88	static
+main.cpp:452:13:void MX_TIM10_Init()	8	static
+main.cpp:483:13:void MX_USART1_UART_Init()	8	static
+main.cpp:516:13:void MX_USART2_UART_Init()	8	static
+main.cpp:549:13:void MX_USART6_UART_Init()	8	static
+main.cpp:582:13:void MX_GPIO_Init()	48	static
+main.cpp:621:6:void Error_Handler()	4	static,ignoring_inline_asm
 base.h:390:24:T flatbuffers::EndianScalar(T) [with T = long unsigned int]	16	static
 base.h:401:3:T flatbuffers::ReadScalar(const void*) [with T = short unsigned int]	16	static
 base.h:401:3:T flatbuffers::ReadScalar(const void*) [with T = long unsigned int]	16	static
@@ -38,17 +38,20 @@ flatbuffers.h:2104:31:const T* flatbuffers::GetRoot(const void*) [with T = tflit
 stl_vector.h:128:2:std::_Vector_base<_Tp, _Alloc>::_Vector_impl::_Vector_impl() [with _Tp = std::unique_ptr<TfLiteDelegate, void (*)(TfLiteDelegate*)>; _Alloc = std::allocator<std::unique_ptr<TfLiteDelegate, void (*)(TfLiteDelegate*)> >]	16	static
 op_resolver.h:30:7:constexpr tflite::OpResolver::OpResolver()	16	static
 micro_op_resolver.h:35:7:constexpr tflite::MicroOpResolver::MicroOpResolver()	16	static
-micro_mutable_op_resolver.h:43:12:tflite::MicroMutableOpResolver<tOpCount>::MicroMutableOpResolver(tflite::ErrorReporter*) [with unsigned int tOpCount = 1]	16	static
-micro_mutable_op_resolver.h:253:16:TfLiteStatus tflite::MicroMutableOpResolver<tOpCount>::AddFullyConnected(const TfLiteRegistration&) [with unsigned int tOpCount = 1]	16	static
+micro_mutable_op_resolver.h:43:12:tflite::MicroMutableOpResolver<tOpCount>::MicroMutableOpResolver(tflite::ErrorReporter*) [with unsigned int tOpCount = 4]	16	static
+micro_mutable_op_resolver.h:192:16:TfLiteStatus tflite::MicroMutableOpResolver<tOpCount>::AddDepthwiseConv2D() [with unsigned int tOpCount = 4]	48	static
+micro_mutable_op_resolver.h:253:16:TfLiteStatus tflite::MicroMutableOpResolver<tOpCount>::AddFullyConnected(const TfLiteRegistration&) [with unsigned int tOpCount = 4]	16	static
+micro_mutable_op_resolver.h:451:16:TfLiteStatus tflite::MicroMutableOpResolver<tOpCount>::AddSoftmax(const TfLiteRegistration&) [with unsigned int tOpCount = 4]	16	static
+micro_mutable_op_resolver.h:416:16:TfLiteStatus tflite::MicroMutableOpResolver<tOpCount>::AddReshape() [with unsigned int tOpCount = 4]	48	static
 base.h:390:24:T flatbuffers::EndianScalar(T) [with T = long int]	16	static
 base.h:390:24:T flatbuffers::EndianScalar(T) [with T = short unsigned int]	16	static
 flatbuffers.h:2097:25:T* flatbuffers::GetMutableRoot(void*) [with T = tflite::Model]	16	static
 allocator.h:138:7:std::allocator< <template-parameter-1-1> >::allocator() [with _Tp = std::unique_ptr<TfLiteDelegate, void (*)(TfLiteDelegate*)>]	16	static
 stl_vector.h:94:2:std::_Vector_base<_Tp, _Alloc>::_Vector_impl_data::_Vector_impl_data() [with _Tp = std::unique_ptr<TfLiteDelegate, void (*)(TfLiteDelegate*)>; _Alloc = std::allocator<std::unique_ptr<TfLiteDelegate, void (*)(TfLiteDelegate*)> >]	16	static
-micro_mutable_op_resolver.h:534:16:TfLiteStatus tflite::MicroMutableOpResolver<tOpCount>::AddBuiltin(tflite::BuiltinOperator, const TfLiteRegistration&, tflite::MicroOpResolver::BuiltinParseFunction) [with unsigned int tOpCount = 1]	32	static
+micro_mutable_op_resolver.h:534:16:TfLiteStatus tflite::MicroMutableOpResolver<tOpCount>::AddBuiltin(tflite::BuiltinOperator, const TfLiteRegistration&, tflite::MicroOpResolver::BuiltinParseFunction) [with unsigned int tOpCount = 4]	32	static
 new_allocator.h:80:7:__gnu_cxx::new_allocator<_Tp>::new_allocator() [with _Tp = std::unique_ptr<TfLiteDelegate, void (*)(TfLiteDelegate*)>]	16	static
-micro_mutable_op_resolver.h:46:29:const TfLiteRegistration* tflite::MicroMutableOpResolver<tOpCount>::FindOp(tflite::BuiltinOperator) const [with unsigned int tOpCount = 1]	24	static
-micro_mutable_op_resolver.h:39:7:tflite::MicroMutableOpResolver<1>::~MicroMutableOpResolver()	16	static
-micro_mutable_op_resolver.h:39:7:virtual tflite::MicroMutableOpResolver<1>::~MicroMutableOpResolver()	16	static
-micro_mutable_op_resolver.h:58:29:const TfLiteRegistration* tflite::MicroMutableOpResolver<tOpCount>::FindOp(const char*) const [with unsigned int tOpCount = 1]	24	static
-micro_mutable_op_resolver.h:69:41:TfLiteStatus (* tflite::MicroMutableOpResolver<tOpCount>::GetOpDataParser(tflite::BuiltinOperator) const)(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**) [with unsigned int tOpCount = 1]	24	static
+micro_mutable_op_resolver.h:46:29:const TfLiteRegistration* tflite::MicroMutableOpResolver<tOpCount>::FindOp(tflite::BuiltinOperator) const [with unsigned int tOpCount = 4]	24	static
+micro_mutable_op_resolver.h:39:7:tflite::MicroMutableOpResolver<4>::~MicroMutableOpResolver()	16	static
+micro_mutable_op_resolver.h:39:7:virtual tflite::MicroMutableOpResolver<4>::~MicroMutableOpResolver()	16	static
+micro_mutable_op_resolver.h:58:29:const TfLiteRegistration* tflite::MicroMutableOpResolver<tOpCount>::FindOp(const char*) const [with unsigned int tOpCount = 4]	24	static
+micro_mutable_op_resolver.h:69:41:TfLiteStatus (* tflite::MicroMutableOpResolver<tOpCount>::GetOpDataParser(tflite::BuiltinOperator) const)(const tflite::Operator*, tflite::ErrorReporter*, tflite::BuiltinDataAllocator*, void**) [with unsigned int tOpCount = 4]	24	static

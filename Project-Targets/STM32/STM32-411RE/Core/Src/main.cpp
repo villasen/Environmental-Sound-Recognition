@@ -85,7 +85,9 @@ UART_HandleTypeDef huart6;
 namespace {
 tflite::ErrorReporter* error_reporter = nullptr;
 const tflite::Model* model = nullptr;
+tflite::MicroInterpreter* interpreter = nullptr;
 TfLiteTensor* model_input = nullptr;
+int8_t* model_input_buffer = nullptr;
 //FeatureProvider* feature_provider = nullptr;
 //RecognizeCommands* recognizer = nullptr;
 //int32_t previous_time = 0;
@@ -93,13 +95,9 @@ TfLiteTensor* model_input = nullptr;
 // Create an area of memory to use for input, output, and intermediate arrays.
 // The size of this will depend on the model you're using, and may need to be
 // determined by experimentation.
-constexpr int kTensorArenaSize = 7 * 1024;
+constexpr int kTensorArenaSize = 20 * 1024;
 uint8_t tensor_arena[kTensorArenaSize];
 }  // namespace
-
-
-
-
 
 
 /* USER CODE END PV */
@@ -111,6 +109,8 @@ static void MX_TIM10_Init(void);
 static void MX_USART1_UART_Init(void);
 static void MX_USART2_UART_Init(void);
 static void MX_USART6_UART_Init(void);
+
+void LogMCU(const char * message );
 /* USER CODE BEGIN PFP */
 
 /* USER CODE END PFP */
@@ -128,13 +128,13 @@ int main(void)
 {
 
 	/* USER CODE BEGIN 1 */
-/*	char buf[50];
+	char buf[50];
 	int buf_len = 0;
+    int test = 2;
+//	uint32_t num_elements;
+//	uint32_t timestamp;
+//	float y_val;
 
-	uint32_t num_elements;
-	uint32_t timestamp;
-	float y_val;
-*/
 	TfLiteStatus tflite_status;
   /* USER CODE END 1 */
 
@@ -168,18 +168,19 @@ int main(void)
 	  static tflite::MicroErrorReporter micro_error_reporter;
 	  error_reporter = &micro_error_reporter;
 
-	error_reporter->Report("\n*****Starting Sound Recognition Program for Sparkfun Edge*****\n");
+	  LogMCU("\n*****Starting Sound Recognition Program for STM32 411RE*****\r\n");
 
 
 	 // Map the model into a usable data structure. This doesn't involve any
 	  // copying or parsing, it's a very lightweight operation.
 	  model = tflite::GetModel(g_tiny_conv_micro_features_model_data);
+
 	  if (model->version() != TFLITE_SCHEMA_VERSION) {
-	    error_reporter->Report(
-	        "Model provided is schema version %d not equal "
-	        "to supported version %d.",
-	        model->version(), TFLITE_SCHEMA_VERSION);
-	    //return;
+	    TF_LITE_REPORT_ERROR(error_reporter,
+	                         "Model provided is schema version %d not equal "
+	                         "to supported version %d.",
+	                         model->version(), TFLITE_SCHEMA_VERSION);
+	  //  return;
 	  }
 
 
@@ -190,122 +191,176 @@ int main(void)
 	   // needed by this graph.
 
 
-	   static tflite::MicroMutableOpResolver<1> micro_mutable_op_resolver;
+	   static tflite::MicroMutableOpResolver<4> micro_op_resolver;
 
-
-	   tflite_status = micro_mutable_op_resolver.AddFullyConnected();
-	   if (tflite_status != kTfLiteOk)
-	   {
-	     error_reporter->Report("Could not add FULLY CONNECTED op");
-	     while(1);
+	   if (micro_op_resolver.AddDepthwiseConv2D() != kTfLiteOk) {
+		   LogMCU(" ADD AddDepthwiseConv2D failed\r\n");
+	   //  return;
+	   }
+	   if (micro_op_resolver.AddFullyConnected() != kTfLiteOk) {
+		   LogMCU("AddFullyConnected failed\r\n");
+	   //  return;
+	   }
+	   if (micro_op_resolver.AddSoftmax() != kTfLiteOk) {
+		   LogMCU("AddSoftmax failed\r\n");
+	  //   return;
+	   }
+	   if (micro_op_resolver.AddReshape() != kTfLiteOk) {
+		   LogMCU("AddReshape failed\r\n");
+	   //  return;
 	   }
 
 
+
 	   // Build an interpreter to run the model with.
-	   tflite::MicroInterpreter interpreter(model, micro_mutable_op_resolver,
-	                                     tensor_arena, kTensorArenaSize,
-	                                     error_reporter);
+	   tflite::MicroInterpreter interpreter(model, micro_op_resolver, tensor_arena, kTensorArenaSize, error_reporter);
 
 
 	   TfLiteStatus allocate_status = interpreter.AllocateTensors();
 
 	   if (allocate_status != kTfLiteOk) {
-	     error_reporter->Report("AllocateTensors() failed");
+	     LogMCU("AllocateTensors() failed\r\n");
 	    // return;
 	   }
 
 
 	   // Get information about the memory area to use for the model's input.
-	     //model_input = interpreter->input(0);
+	   //  model_input = interpreter->input(0);
 	     model_input = interpreter.input(0);
 
-	     error_reporter->Report("model dim size=%d", model_input->dims->size);
-	     error_reporter->Report("model dim data0=%d", model_input->dims->data[0]);
-	     error_reporter->Report("model dim data1=%d", model_input->dims->data[1]);
-	     error_reporter->Report("model dim data2=%d", model_input->dims->data[2]);
-	     error_reporter->Report("model type=%d", model_input->type);
+//	     	    buf_len = sprintf(buf,
+//	     	                      "Output: %f | Duration: %lu\r\n",
+//	     	    		          "Test 411RE\r\n");
+//	     	                      y_val,
+//	     	                      htim16.Instance->CNT - timestamp);
+//	     	    HAL_UART_Transmit(&huart2, (uint8_t *)buf, buf_len, 100);
+//
 
+	    buf_len = sprintf(buf, "model dim size=%d \r\n", model_input->dims->size);
+	    HAL_UART_Transmit(&huart2, (uint8_t *)buf, buf_len, 100);
 
-	     if ((model_input->dims->size != 4) || (model_input->dims->data[0] != 1) ||
-	         (model_input->dims->data[1] != kFeatureSliceCount) ||
-	         (model_input->dims->data[2] != kFeatureSliceSize) ||
-	         (model_input->type != kTfLiteUInt8)) {
-	       error_reporter->Report("Bad input tensor parameters in model");
-	 //      return;
+	    buf_len = sprintf(buf, "model dim data0=%d \r\n", model_input->dims->data[0]);
+	    HAL_UART_Transmit(&huart2, (uint8_t *)buf, buf_len, 100);
+
+	    buf_len = sprintf(buf, "model dim data1=%d \r\n",model_input->dims->data[1]);
+	    HAL_UART_Transmit(&huart2, (uint8_t *)buf, buf_len, 100);
+
+	    buf_len = sprintf(buf, "model type=%d \r\n", model_input->type);
+	    HAL_UART_Transmit(&huart2, (uint8_t *)buf, buf_len, 100);
+
+//			 error_reporter->Report("model dim size=%d", model_input->dims->size);
+//			 error_reporter->Report("model dim data0=%d", model_input->dims->data[0]);
+//			 error_reporter->Report("model dim data1=%d", model_input->dims->data[1]);
+//			 error_reporter->Report("model dim data2=%d", model_input->dims->data[2]);
+//			 error_reporter->Report("model type=%d", model_input->type);
+
+	     if ((model_input->dims->size != 2) || (model_input->dims->data[0] != 1) ||
+	         (model_input->dims->data[1] !=
+	          (kFeatureSliceCount * kFeatureSliceSize)) ||
+	         (model_input->type != kTfLiteInt8)) {
+	       TF_LITE_REPORT_ERROR(error_reporter,
+	                            "Bad input tensor parameters in model");
+	      // return;
 	     }
 
+	     model_input_buffer = model_input->data.int8;
 
 
-	     for (int i = 0; i < BABY_TOTAL_FILE_NUMBER ; i++)
-	     {
-	         error_reporter->Report("Test Number is %d", i);
-	         error_reporter->Report("*****************");
-	         error_reporter->Report("Testing input data crying baby");
+//	     error_reporter->Report("model dim size=%d", model_input->dims->size);
+//	     error_reporter->Report("model dim data0=%d", model_input->dims->data[0]);
+//	     error_reporter->Report("model dim data1=%d", model_input->dims->data[1]);
+//	     error_reporter->Report("model dim data2=%d", model_input->dims->data[2]);
+//	     error_reporter->Report("model type=%d", model_input->type);
+//
+//
+//	     if ((model_input->dims->size != 4) || (model_input->dims->data[0] != 1) ||
+//	         (model_input->dims->data[1] != kFeatureSliceCount) ||
+//	         (model_input->dims->data[2] != kFeatureSliceSize) ||
+//	         (model_input->type != kTfLiteUInt8)) {
+//	       error_reporter->Report("Bad input tensor parameters in model");
+	 //      return;
+	//     }
 
 
-	       for (int j = 0; j < (int)model_input->bytes; j++) {
-	         //   model_input->data.uint8[j] =  g_crying_baby_sounds_arrays[i][j];
-	         //   model_input->data.uint8[j] =  g_dog_bark_sounds_arrays[i][j];
-	         //   model_input->data.uint8[j] =  g_door_knock_sounds_arrays[i][j];
-	         //   model_input->data.uint8[j] =  g_gun_shot_sounds_arrays[i][j];
-	         //     model_input->data.uint8[j] =  g_clapping_sounds_arrays[i][j];
-	         //     model_input->data.uint8[j] =  g_clock_alarm_sounds_arrays[i][j];
-	        //      model_input->data.uint8[j] =  g_coughing_sounds_arrays[i][j];
-	              model_input->data.uint8[j] =  g_dog_sounds_arrays[i][j];
 
-	         }
+//	     for (int i = 0; i < BABY_TOTAL_FILE_NUMBER ; i++)
+//	     {
+//	         error_reporter->Report("Test Number is %d", i);
+//	         error_reporter->Report("*****************");
+//	         error_reporter->Report("Testing input data crying baby");
+//
+//
+//	       for (int j = 0; j < (int)model_input->bytes; j++) {
+//	         //   model_input->data.uint8[j] =  g_crying_baby_sounds_arrays[i][j];
+//	         //   model_input->data.uint8[j] =  g_dog_bark_sounds_arrays[i][j];
+//	         //   model_input->data.uint8[j] =  g_door_knock_sounds_arrays[i][j];
+//	         //   model_input->data.uint8[j] =  g_gun_shot_sounds_arrays[i][j];
+//	         //     model_input->data.uint8[j] =  g_clapping_sounds_arrays[i][j];
+//	         //     model_input->data.uint8[j] =  g_clock_alarm_sounds_arrays[i][j];
+//	        //      model_input->data.uint8[j] =  g_coughing_sounds_arrays[i][j];
+//	              model_input->data.uint8[j] =  g_dog_sounds_arrays[i][j];
+//
+//	         }
 
 
 	       // Run the model on the spectrogram input and make sure it succeeds.
 	       TfLiteStatus invoke_status = interpreter.Invoke();
 	       if (invoke_status != kTfLiteOk) {
-	         error_reporter->Report("Invoke failed");
-	       //  return;
+	         LogMCU("Invoke failed");
+//	       //  return;
 	       }
 
 	       // Obtain a pointer to the output tensor
-	       //TfLiteTensor* output = interpreter->output(0);
+	     //  TfLiteTensor* output = interpreter->output(0);
 	       TfLiteTensor* output = interpreter.output(0);
-	       error_reporter->Report("output: %d", output->data.uint8[0]);
+	   //    error_reporter->Report("output: %d", output->data.uint8[0]);
 
-
-	       // There are four possible classes in the output, each with a score.
-	       const int kSilenceIndex = 0;
-	       const int kUnknownIndex = 1;
-	       const int kcarhornIndex = 2;
-	       const int kCoughingIndex = 3;
-	       const int kClappingIndex = 4;
-	       const int kGunShotIndex = 5;
-	       const int kCryingBabyIndex = 6;
-	       const int kDoorKnockIndex = 7;
-	       const int kSheilaIndex = 8;
-	       const int kDogBarkIndex = 9;
-
-
-	       // Make sure that the expected "Yes" score is higher than the other classes.
+		   const int kSilenceIndex = 0;
+		   const int kUnknownIndex = 1;
+		   const int kyesIndex = 2;
+		   const int knoIndex = 3;
+//	       // There are four possible classes in the output, each with a score.
+//	       const int kSilenceIndex = 0;
+//	       const int kUnknownIndex = 1;
+//	       const int kcarhornIndex = 2;
+//	       const int kCoughingIndex = 3;
+//	       const int kClappingIndex = 4;
+//	       const int kGunShotIndex = 5;
+//	       const int kCryingBabyIndex = 6;
+//	       const int kDoorKnockIndex = 7;
+//	       const int kSheilaIndex = 8;
+//	       const int kDogBarkIndex = 9;
+//
+//
+//	       // Make sure that the expected "Yes" score is higher than the other classes.
 	       uint8_t silence_score = output->data.uint8[kSilenceIndex];
 	       uint8_t unknown_score = output->data.uint8[kUnknownIndex];
-//	       uint8_t car_horn_score = output->data.uint8[kcarhornIndex];
-	       uint8_t coughing_score = output->data.uint8[kCoughingIndex];
-	       uint8_t clapping_score = output->data.uint8[kClappingIndex];
-	       uint8_t gunshot_score = output->data.uint8[kGunShotIndex];
-	       uint8_t crying_baby_score = output->data.uint8[kCryingBabyIndex];
-	       uint8_t door_knock_score = output->data.uint8[kDoorKnockIndex];
-	       uint8_t sheila_score = output->data.uint8[kSheilaIndex];
-	       uint8_t dog_bark_score = output->data.uint8[kDogBarkIndex];
+	       uint8_t yes_score = output->data.uint8[kyesIndex];
+	       uint8_t no_score = output->data.uint8[knoIndex];
+////	       uint8_t car_horn_score = output->data.uint8[kcarhornIndex];
+//	       uint8_t coughing_score = output->data.uint8[kCoughingIndex];
+//	       uint8_t clapping_score = output->data.uint8[kClappingIndex];
+//	       uint8_t gunshot_score = output->data.uint8[kGunShotIndex];
+//	       uint8_t crying_baby_score = output->data.uint8[kCryingBabyIndex];
+//	       uint8_t door_knock_score = output->data.uint8[kDoorKnockIndex];
+//	       uint8_t sheila_score = output->data.uint8[kSheilaIndex];
+//	       uint8_t dog_bark_score = output->data.uint8[kDogBarkIndex];
+//
 
-	      // error_reporter->Report("Softmax: silence=%d, unknown=%d, yes=%d, no=%d", silence_score, unknown_score, yes_score, no_score);
-	       //"car_horn,coughing,clapping,gun_shot,crying_baby,door_knock,clock_alarm,dog"
-	       error_reporter->Report("Softmax: silence=%d, unknown=%d, car horn=%d, coughing=%d,  \
-	       clapping=%d, gunshot=%d, crying_baby=%d, door_knock=%d, clock alarm=%d, dog=%d"
-	       ,silence_score, unknown_score, kcarhornIndex, coughing_score, clapping_score,
-	       gunshot_score, crying_baby_score, door_knock_score,
-	       sheila_score, dog_bark_score);
-
-	     }
-
-	       error_reporter->Report("\n*****Martin is classifying sounds*****");
-	       error_reporter->Report("\n*****End of Sound Recognition Classifier for Sparfun Edge Program*****");
+		    buf_len = sprintf(buf, "Softmax: silence=%d, unknown=%d, yes=%d, no=%d \r\n", silence_score, unknown_score, yes_score, no_score);
+		    HAL_UART_Transmit(&huart2, (uint8_t *)buf, buf_len, 100);
+//	      // error_reporter->Report("Softmax: silence=%d, unknown=%d, yes=%d, no=%d", silence_score, unknown_score, yes_score, no_score);
+//	       //"car_horn,coughing,clapping,gun_shot,crying_baby,door_knock,clock_alarm,dog"
+//	       error_reporter->Report("Softmax: silence=%d, unknown=%d, car horn=%d, coughing=%d,  \
+//	       clapping=%d, gunshot=%d, crying_baby=%d, door_knock=%d, clock alarm=%d, dog=%d"
+//	       ,silence_score, unknown_score, kcarhornIndex, coughing_score, clapping_score,
+//	       gunshot_score, crying_baby_score, door_knock_score,
+//	       sheila_score, dog_bark_score);
+//
+//	     }
+//
+//	       error_reporter->Report("\n*****Martin is classifying sounds*****");
+//	       error_reporter->Report("\n*****End of Sound Recognition Classifier for Sparfun Edge Program*****");
 /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -313,7 +368,23 @@ int main(void)
   while (1)
   {
 
+	   // Print output of neural network along with inference time (microseconds)
+//	    buf_len = sprintf(buf,
+//	                      "Output: %f | Duration: %lu\r\n",
+//	    		          "Test 411RE\r\n");
+//	                      y_val,
+//	                      htim16.Instance->CNT - timestamp);
+//	    HAL_UART_Transmit(&huart2, (uint8_t *)buf, buf_len, 100);
 
+
+//	    buf_len = sprintf(buf,"Test 411RE\r\n");
+//	    HAL_UART_Transmit(&huart2, (uint8_t *)buf, buf_len, 100);
+
+	    LogMCU(" testing Martin\r\n");
+
+
+	    // Wait before doing it again
+	    HAL_Delay(1000);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -321,6 +392,14 @@ int main(void)
   /* USER CODE END 3 */
 }
 
+void LogMCU(const char * message )
+{
+	char buf[100];
+	int buf_len = 0;
+
+	buf_len = sprintf(buf, message);
+    HAL_UART_Transmit(&huart2, (uint8_t *)buf, buf_len, 100);
+}
 /**
   * @brief System Clock Configuration
   * @retval None
@@ -529,10 +608,10 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
-extern "C" void DebugLog(const char* s)
-{
-  HAL_UART_Transmit(&huart1, (uint8_t *)s, strlen(s), 100);
-}
+//extern "C" void DebugLog(const char* s)
+//{
+//  HAL_UART_Transmit(&huart1, (uint8_t *)s, strlen(s), 100);
+//}
 /* USER CODE END 4 */
 
 /**
