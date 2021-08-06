@@ -5,6 +5,7 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 CC_SRCS += \
+../Core/Src/Speech_model.cc \
 ../Core/Src/car_horn_micro_features_data.cc \
 ../Core/Src/clapping_micro_features_data.cc \
 ../Core/Src/clock_alarm_micro_features_data.cc \
@@ -42,6 +43,7 @@ C_DEPS += \
 ./Core/Src/system_stm32f4xx.d 
 
 CC_DEPS += \
+./Core/Src/Speech_model.d \
 ./Core/Src/car_horn_micro_features_data.d \
 ./Core/Src/clapping_micro_features_data.d \
 ./Core/Src/clock_alarm_micro_features_data.d \
@@ -62,6 +64,7 @@ CC_DEPS += \
 ./Core/Src/yes_micro_features_data.d 
 
 OBJS += \
+./Core/Src/Speech_model.o \
 ./Core/Src/car_horn_micro_features_data.o \
 ./Core/Src/clapping_micro_features_data.o \
 ./Core/Src/clock_alarm_micro_features_data.o \

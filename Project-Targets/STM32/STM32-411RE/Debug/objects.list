@@ -1,3 +1,4 @@
+"./Core/Src/Speech_model.o"
 "./Core/Src/car_horn_micro_features_data.o"
 "./Core/Src/clapping_micro_features_data.o"
 "./Core/Src/clock_alarm_micro_features_data.o"

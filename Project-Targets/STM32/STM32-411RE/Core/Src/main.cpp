@@ -173,7 +173,10 @@ int main(void)
 
 	 // Map the model into a usable data structure. This doesn't involve any
 	  // copying or parsing, it's a very lightweight operation.
-	  model = tflite::GetModel(g_tiny_conv_micro_features_model_data);
+//	  model = tflite::GetModel(g_tiny_conv_micro_features_model_data);
+	  model = tflite::GetModel(g_speech_model_yes_no_data);
+
+
 
 	  if (model->version() != TFLITE_SCHEMA_VERSION) {
 	    TF_LITE_REPORT_ERROR(error_reporter,
@@ -263,7 +266,7 @@ int main(void)
 	      // return;
 	     }
 
-	     model_input_buffer = model_input->data.int8;
+	  //   model_input_buffer = model_input->data.int8;
 
 
 //	     error_reporter->Report("model dim size=%d", model_input->dims->size);
@@ -281,8 +284,16 @@ int main(void)
 	 //      return;
 	//     }
 
+	     const uint8_t* features_data =  g_yes_micro_f2e59fea_nohash_1_data;
+	    // const uint8_t* features_data =  g_no_micro_f9643d42_nohash_4_data;
+
+	     for (int i = 0; i < model_input->bytes; ++i) {
+	         model_input->data.uint8[i] = features_data[i];
+	      //model_input->data.uint8[i] = **features_data;
+	     //   model_input->data.uint8[i] = sounds_array[1];
 
 
+	      }
 //	     for (int i = 0; i < BABY_TOTAL_FILE_NUMBER ; i++)
 //	     {
 //	         error_reporter->Report("Test Number is %d", i);
